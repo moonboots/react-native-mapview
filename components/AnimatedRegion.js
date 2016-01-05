@@ -1,3 +1,7 @@
+import { Animated } from 'react-native';
+const { AnimatedWithChildren, timing, parallel } = Animated;
+const AnimatedValue = Animated.Value;
+
 class AnimatedRegion extends AnimatedWithChildren {
   //latitude: AnimatedValue;
   //longitude: AnimatedValue;
@@ -18,16 +22,16 @@ class AnimatedRegion extends AnimatedWithChildren {
       latitudeDelta: 0,
       longitudeDelta: 0,
     };
-    this.latitude = value.latitude instanceof Animated
+    this.latitude = value.latitude instanceof AnimatedValue
       ? value.latitude
       : new AnimatedValue(value.latitude);
-    this.longitude = value.longitude instanceof Animated
+    this.longitude = value.longitude instanceof AnimatedValue
       ? value.longitude
       : new AnimatedValue(value.longitude);
-    this.latitudeDelta = value.latitudeDelta instanceof Animated
+    this.latitudeDelta = value.latitudeDelta instanceof AnimatedValue
       ? value.latitudeDelta
       : new AnimatedValue(value.latitudeDelta);
-    this.longitudeDelta = value.longitudeDelta instanceof Animated
+    this.longitudeDelta = value.longitudeDelta instanceof AnimatedValue
       ? value.longitudeDelta
       : new AnimatedValue(value.longitudeDelta);
     this._listeners = {};
