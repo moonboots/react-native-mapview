@@ -173,3 +173,5 @@ class AnimatedRegion extends AnimatedWithChildren {
     return parallel(animations);
   }
 }
+
+module.exports = AnimatedRegion;

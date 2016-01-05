@@ -11,6 +11,7 @@ var {
 } = React;
 
 var MapView = require('../components/MapView');
+var AnimatedRegion = require('../components/AnimatedRegion');
 var PanController = require('./PanController');
 var PriceMarker = require('./AnimatedPriceMarker');
 
@@ -193,7 +194,7 @@ var AnimatedViews = React.createClass({
       scale,
       translateY,
       markers,
-      region: new Animated.Region({
+      region: new AnimatedRegion({
         latitude: LATITUDE,
         longitude: LONGITUDE,
         latitudeDelta: LATITUDE_DELTA,
